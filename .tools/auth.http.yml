@@ -1,0 +1,66 @@
+---
+label: User Signup
+query:
+  method: POST
+  url: 'http://localhost:3000/auth/signup'
+  headers:
+    content-type: application/json
+body:
+  name: "{{.userName}}"
+  email: "{{.userEmail}}"
+  password: "{{.userPassword}}"
+---
+
+---
+label: Forgot Password
+query:
+  method: POST
+  url: 'http://localhost:3000/auth/request-reset-password'
+  headers:
+    content-type: application/json
+body:
+  email: "sample@gmail.com"
+---
+
+---
+label: Reset Password
+query:
+  method: POST
+  url: 'http://localhost:3000/auth/reset-password'
+  headers:
+    content-type: application/json
+body:
+  token: "672735f382412d5c1bef5a45"
+  password: "sample2"
+---
+
+---
+label: Login
+query:
+  method: POST
+  url: 'http://localhost:3000/auth/login'
+  headers:
+    content-type: application/json
+body:
+  email: "sample@gmail.com"
+  password: "sample2"
+---
+
+
+---
+label: Me
+query:
+  method: GET
+  headers:
+    cookie: session=j%3A%2267273df941623a727c847ca5%22; Max-Age=900; Path=/; Expires=Sun, 03 Nov 2024 09:25:17 GMT; HttpOnly
+  url: 'http://localhost:3000/auth/me'
+---
+
+---
+label: Logout
+query:
+  method: DELETE
+  headers:
+    cookie: session=j%3A%2267273df941623a727c847ca5%22; Max-Age=900; Path=/; Expires=Sun, 03 Nov 2024 09:25:17 GMT; HttpOnly
+  url: 'http://localhost:3000/auth/logout'
+---

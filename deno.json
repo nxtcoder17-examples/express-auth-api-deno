@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "bcryptjs": "npm:bcryptjs@^2.4.3",
+    "cookie-parser": "npm:cookie-parser@^1.4.7",
+    "express": "npm:express@^5.0.1",
+    "mongoose": "npm:mongoose@^8.8.0"
+  }
+}
